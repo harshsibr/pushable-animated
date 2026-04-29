@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 
@@ -7,6 +8,14 @@ const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', s
 
 
 export default function Hero() {
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setStarted(true);
+    window.addEventListener("heroReady", handler);
+    return () => window.removeEventListener("heroReady", handler);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
 
@@ -23,7 +32,7 @@ export default function Hero() {
               <motion.span
                 className="inline-block"
                 initial={{ x: -120, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                animate={started ? { x: 0, opacity: 1 } : { x: -120, opacity: 0 }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
               >
                 Automated
@@ -32,7 +41,7 @@ export default function Hero() {
               <motion.span
                 className="inline-block"
                 initial={{ y: -90, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                animate={started ? { y: 0, opacity: 1 } : { y: -90, opacity: 0 }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.38 }}
               >
                 AI
@@ -42,7 +51,7 @@ export default function Hero() {
             <motion.span
               className="relative inline-block"
               initial={{ opacity: 0, y: 45 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={started ? { opacity: 1, y: 0 } : { opacity: 0, y: 45 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
             >
               Workflow Assistant
@@ -55,7 +64,7 @@ export default function Hero() {
           {/* Subtitle */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={started ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.78 }}
             className="space-y-1.5 max-w-2xl mx-auto"
           >
@@ -73,7 +82,7 @@ export default function Hero() {
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={started ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.95 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2"
           >
@@ -102,7 +111,7 @@ export default function Hero() {
 
       {/* Gradient fade — blends hero video into the beige section below */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-36 z-10 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-10 z-10 pointer-events-none"
         style={{ background: "linear-gradient(to bottom, transparent 0%, #F0EBD8 100%)" }}
       />
 

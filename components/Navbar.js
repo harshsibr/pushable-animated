@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Product",    dropdown: ["Finance Agent", "HR Agent", "Sales Agent", "Operations Agent"] },
+  { label: "Product" },
   { label: "How it Works" },
-  { label: "Industries", dropdown: ["Healthcare", "Finance", "E-commerce", "Marketing", "SaaS"] },
+  { label: "Industries" },
   { label: "Pricing" },
   { label: "FAQ" },
   { label: "Contact" },
@@ -15,7 +15,6 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -45,38 +44,13 @@ export default function Navbar() {
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
             {navLinks.map((link) => (
-              <div
+              <a
                 key={link.label}
-                className="relative"
-                onMouseEnter={() => link.dropdown && setActiveDropdown(link.label)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                href="#"
+                className="px-3 py-1.5 text-[13px] font-medium text-white/80 hover:text-white rounded-full hover:bg-white/10 transition-all"
               >
-                <button className="flex items-center gap-1 px-3 py-1.5 text-[13px] font-medium text-white/80 hover:text-white rounded-full hover:bg-white/10 transition-all">
-                  {link.label}
-                  {link.dropdown && (
-                    <ChevronDown className={`w-3 h-3 transition-transform duration-200 text-white/50 ${activeDropdown === link.label ? "rotate-180" : ""}`} />
-                  )}
-                </button>
-                <AnimatePresence>
-                  {link.dropdown && activeDropdown === link.label && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 6, scale: 0.96 }}
-                      transition={{ duration: 0.16 }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 bg-black/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 p-2 z-50"
-                    >
-                      {link.dropdown.map((item) => (
-                        <a key={item} href="#"
-                          className="flex items-center gap-2.5 px-3 py-2.5 text-[12px] text-white/65 hover:text-white hover:bg-white/8 rounded-xl transition-all">
-                          <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                          {item}
-                        </a>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                {link.label}
+              </a>
             ))}
           </nav>
 

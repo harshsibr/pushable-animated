@@ -3,6 +3,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import LandscapeBackground from "@/components/LandscapeBackground";
 import CursorFollower from "@/components/CursorFollower";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="text-slate-900 overflow-x-hidden">
+        <LoadingScreen />
         <LandscapeBackground />
         <CursorFollower />
         <SmoothScroll>{children}</SmoothScroll>

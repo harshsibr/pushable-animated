@@ -132,18 +132,20 @@ export default function Pricing() {
                 {/* Price */}
                 <div className="mb-2">
                   {plan.monthlyPrice === null ? (
-                    <p style={SERIF} className="text-4xl font-black text-slate-900">Custom</p>
+                    <p className="text-4xl font-black text-slate-900">Custom</p>
                   ) : plan.free ? (
                     <div className="flex items-end gap-1">
-                      <span style={SERIF} className="text-5xl font-black text-slate-900">$0</span>
-                      <span className="text-slate-400 text-sm mb-2">forever</span>
+                      <span className="text-[13px] font-bold text-slate-500 mb-3 mr-0.5">$</span>
+                      <span className="text-5xl font-black text-slate-900 leading-none">0</span>
+                      <span className="text-slate-400 text-sm mb-2 ml-1">forever</span>
                     </div>
                   ) : (
-                    <div className="flex items-end gap-1">
-                      <span style={SERIF} className="text-5xl font-black text-slate-900">
-                        ${yearly ? plan.yearlyPrice : plan.monthlyPrice}
+                    <div className="flex items-end gap-0.5">
+                      <span className="text-[13px] font-bold text-slate-500 mb-3">$</span>
+                      <span className="text-5xl font-black text-slate-900 leading-none">
+                        {yearly ? plan.yearlyPrice : plan.monthlyPrice}
                       </span>
-                      <span className="text-slate-400 text-sm mb-2">/mo</span>
+                      <span className="text-slate-400 text-sm mb-2 ml-1">/mo</span>
                     </div>
                   )}
                 </div>
