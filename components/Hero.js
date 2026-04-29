@@ -17,7 +17,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col overflow-hidden">
 
       {/* Main content — pinned to top, below navbar */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-start pt-28 pb-10 px-6">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-start pt-52 pb-10 px-6">
         <motion.div
           variants={stagger}
           initial="hidden"
