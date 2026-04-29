@@ -32,13 +32,16 @@ export default function CursorFollower() {
       clearTimeout(timeout);
       timeout = setTimeout(() => setMoving(false), 120);
     };
-    const leave = () => setVisible(false);
+    const leave = () => { setVisible(false); setMoving(false); };
+    const enter = () => setVisible(true);
 
-    window.addEventListener("mousemove", move);
-    window.addEventListener("mouseleave", leave);
+    document.addEventListener("mousemove", move);
+    document.addEventListener("mouseleave", leave);
+    document.addEventListener("mouseenter", enter);
     return () => {
-      window.removeEventListener("mousemove", move);
-      window.removeEventListener("mouseleave", leave);
+      document.removeEventListener("mousemove", move);
+      document.removeEventListener("mouseleave", leave);
+      document.removeEventListener("mouseenter", enter);
       clearTimeout(timeout);
     };
   }, [rawX, rawY]);
