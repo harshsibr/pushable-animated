@@ -18,22 +18,16 @@ export default function LandscapeBackground() {
         />
       </video>
 
-      {/* Lighter overlay — brighter, cleaner hero feel */}
+      {/* Light overlay */}
       <div
         className="absolute inset-0"
-        style={{ background: "rgba(0,0,0,0.38)" }}
+        style={{ background: "rgba(0,0,0,0.18)" }}
       />
 
-      {/* Top vignette */}
+      {/* Top vignette only */}
       <div
-        className="absolute inset-x-0 top-0 h-40 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.32) 0%, transparent 100%)" }}
-      />
-
-      {/* Bottom vignette */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-48 pointer-events-none"
-        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.32) 0%, transparent 100%)" }}
+        className="absolute inset-x-0 top-0 h-32 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, transparent 100%)" }}
       />
     </div>
   );

@@ -9,7 +9,7 @@
 html { scroll-behavior: auto; }
 
 body {
-  background: #EDE8D0;
+  background: #F0EBD8;
   color: #0F172A;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -17,7 +17,7 @@ body {
 }
 
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #EDE8D0; }
+::-webkit-scrollbar-track { background: #F0EBD8; }
 ::-webkit-scrollbar-thumb { background: #DC2626; border-radius: 3px; }
 ::selection { background: rgba(220,38,38,0.12); color: #0F172A; }
 

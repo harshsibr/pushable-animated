@@ -5,10 +5,6 @@ import { ArrowRight, Play } from "lucide-react";
 
 const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', serif" };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } },
-};
 
 export default function Hero() {
   return (
@@ -104,6 +100,11 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Gradient fade — blends hero video into the beige section below */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-36 z-10 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, transparent 0%, #F0EBD8 100%)" }}
+      />
 
     </section>
   );

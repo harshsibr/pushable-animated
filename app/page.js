@@ -17,7 +17,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       {/* Solid white wrapper — hides the fixed video behind all post-Hero sections */}
-      <div className="relative z-10 bg-[#EDE8D0]">
+      <div className="relative z-10 bg-[#F0EBD8]">
         <TrustedBy />
         <AgentCards />
         <HowItWorks />

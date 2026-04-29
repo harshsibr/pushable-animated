@@ -37,7 +37,7 @@ export default function FAQ() {
   const [open, setOpen] = useState(null);
 
   return (
-    <section className="py-24 relative overflow-hidden" id="faq">
+    <section className="pt-24 pb-10 relative overflow-hidden" id="faq">
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         {/* Header */}
         <motion.div
