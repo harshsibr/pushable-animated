@@ -52,10 +52,10 @@ export default function Industries() {
           className="text-center mb-16 max-w-3xl mx-auto"
         >
           <p className="text-[11px] font-black text-red-600 uppercase tracking-[0.2em] mb-4">Built for Every Industry</p>
-          <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-white leading-tight tracking-tight mb-5">
+          <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-slate-900 leading-tight tracking-tight mb-5">
             The Right Push for Every Industry,<br />Built with Pushable
           </h2>
-          <p className="text-[17px] text-white/75 leading-relaxed">
+          <p className="text-[17px] text-slate-600 leading-relaxed">
             Whatever your business does, Pushable AI finds the routine tasks worth automating and handles them for you.
           </p>
         </motion.div>

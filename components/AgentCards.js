@@ -152,7 +152,7 @@ export default function AgentCards() {
             Fully Dynamic
           </motion.p>
 
-          <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-white leading-tight tracking-tight mb-6 overflow-hidden">
+          <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-slate-900 leading-tight tracking-tight mb-6 overflow-hidden">
             {headingLines.map((line, li) => (
               <span key={li} className="block overflow-hidden">
                 {line.split(" ").map((word, wi) => (
@@ -178,7 +178,7 @@ export default function AgentCards() {
             initial={{ opacity: 0, y: 20 }}
             animate={headingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.55 }}
-            className="text-[17px] text-white/75 leading-relaxed"
+            className="text-[17px] text-slate-600 leading-relaxed"
           >
             Deploy AI agents built for your exact business function — each one pre-trained and ready in minutes.
           </motion.p>
@@ -200,7 +200,7 @@ export default function AgentCards() {
               className={`relative flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-semibold border transition-colors duration-200 overflow-hidden ${
                 active === i
                   ? "bg-black text-white border-black shadow-lg shadow-black/20"
-                  : "bg-white/80 backdrop-blur-sm text-slate-600 border-white/60 hover:border-slate-300 hover:bg-white"
+                  : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
               }`}
             >
               <a.icon className="w-4 h-4" />

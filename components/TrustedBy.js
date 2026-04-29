@@ -120,14 +120,20 @@ function BrandItem({ Icon, name }) {
   return (
     <div className="flex items-center gap-2.5 px-5 mx-3 shrink-0">
       <Icon />
-      <span className="text-[14px] font-semibold text-white whitespace-nowrap" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.7)" }}>{name}</span>
+      <span className="text-[14px] font-semibold text-slate-700 whitespace-nowrap">{name}</span>
     </div>
   );
 }
 
 export function MarqueeStrip() {
   return (
-    <div className="max-w-5xl mx-auto overflow-hidden space-y-3">
+    <div
+      className="w-full overflow-hidden space-y-3"
+      style={{
+        WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+        maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+      }}
+    >
       <div className="flex">
         <div className="flex marquee-track will-change-transform">
           {set1.map((b, i) => <BrandItem key={i} Icon={b.Icon} name={b.name} />)}
@@ -144,8 +150,8 @@ export function MarqueeStrip() {
 
 export default function TrustedBy() {
   return (
-    <section className="py-20 relative overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-6 mb-10 text-center">
+    <section className="py-16 relative overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 mb-8 text-center">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -156,8 +162,14 @@ export default function TrustedBy() {
         </motion.p>
       </div>
 
-      {/* Contained strip — clips both sides */}
-      <div className="max-w-5xl mx-auto overflow-hidden space-y-3">
+      {/* Contained strip with fade masks — not full width */}
+      <div
+        className="max-w-5xl mx-auto overflow-hidden space-y-3"
+        style={{
+          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+          maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+        }}
+      >
         <div className="flex">
           <div className="flex marquee-track will-change-transform">
             {set1.map((b, i) => <BrandItem key={i} Icon={b.Icon} name={b.name} />)}

@@ -20,8 +20,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/45 pointer-events-none" />
+    <footer className="relative overflow-hidden bg-slate-900">
       <div className="absolute top-0 left-0 right-0 h-px"
         style={{ background: "linear-gradient(to right, transparent, rgba(220,38,38,0.5) 40%, rgba(220,38,38,0.5) 60%, transparent)" }} />
       <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-40 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />

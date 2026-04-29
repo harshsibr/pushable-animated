@@ -8,35 +8,52 @@ const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', s
 
 const plans = [
   {
-    name: "STARTER",
+    name: "FREE",
     nameColor: "text-slate-600",
     barColor: "bg-slate-200",
-    tagline: "For solo operators testing one workflow.",
-    monthlyPrice: 49, yearlyPrice: 39, credits: "500 credits / mo",
+    tagline: "Try out AI agents with no commitment.",
+    monthlyPrice: 0,
+    yearlyPrice: 0,
+    free: true,
+    credits: "500 credits / mo",
     creditsColor: "text-red-600",
-    features: ["1 AI Agent", "500 task credits/mo", "3 integrations", "Email support", "Basic dashboard"],
-    cta: "Start for Free", popular: false,
+    features: ["1 AI agent", "500 credits per month", "Basic task automation", "Community support"],
+    cta: "Current plan", popular: false,
     ctaStyle: "border border-slate-300 text-slate-800 hover:border-slate-400 hover:bg-slate-50",
   },
   {
-    name: "GROWTH",
+    name: "STARTER",
+    nameColor: "text-slate-600",
+    barColor: "bg-slate-200",
+    tagline: "Everything you need to get started with AI agents.",
+    monthlyPrice: 20, yearlyPrice: 16, yearlyTotal: 192,
+    credits: "2,000 credits / mo",
+    creditsColor: "text-red-600",
+    features: ["Create & manage multiple AI agents", "Task automation and execution", "Workflow customization via UI", "Real-time task monitoring", "Usage insights & analytics"],
+    cta: "Get Started", popular: false,
+    ctaStyle: "border border-slate-300 text-slate-800 hover:border-slate-400 hover:bg-slate-50",
+  },
+  {
+    name: "PRO",
     nameColor: "text-red-600",
     barColor: "bg-red-200",
-    tagline: "The sweet spot for growing teams.",
-    monthlyPrice: 149, yearlyPrice: 119, credits: "2,000 credits / mo",
+    tagline: "For teams building serious agentic workflows at scale.",
+    monthlyPrice: 55, yearlyPrice: 44, yearlyTotal: 528,
+    credits: "7,000 credits / mo",
     creditsColor: "text-red-600",
-    features: ["3 AI Agents", "2,000 task credits/mo", "All integrations", "Priority support", "Advanced dashboard", "Custom workflows"],
+    features: ["Everything in Starter", "7,000 credits per month", "Priority task processing", "Advanced agent capabilities", "Credit rollovers", "Early access to new features"],
     cta: "Get Started", popular: true,
     ctaStyle: "bg-red-600 hover:bg-red-500 text-white shadow-lg shadow-red-600/25",
   },
   {
-    name: "SCALE",
+    name: "ENTERPRISE",
     nameColor: "text-slate-600",
     barColor: "bg-slate-200",
-    tagline: "For businesses running on automation.",
-    monthlyPrice: 399, yearlyPrice: 319, credits: "Unlimited",
+    tagline: "Tailored solutions for large organizations.",
+    monthlyPrice: null, yearlyPrice: null,
+    credits: "Unlimited credits",
     creditsColor: "text-red-600",
-    features: ["All 4 AI Agents", "Unlimited credits", "All integrations", "Dedicated support", "White-label option", "API access"],
+    features: ["Everything in Pro", "Unlimited credits", "Dedicated infrastructure", "SSO & advanced security", "SLA guarantees", "Dedicated account manager"],
     cta: "Contact Sales", popular: false,
     ctaStyle: "border border-slate-300 text-slate-800 hover:border-slate-400 hover:bg-slate-50",
   },
@@ -57,10 +74,10 @@ export default function Pricing() {
           className="text-center mb-14 max-w-3xl mx-auto"
         >
           <p className="text-[11px] font-black text-red-600 uppercase tracking-[0.2em] mb-4">Simple, Transparent Pricing</p>
-          <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-white leading-tight tracking-tight mb-5">
+          <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-slate-900 leading-tight tracking-tight mb-5">
             Flexible Plans for Every<br />Stage of Growth
           </h2>
-          <p className="text-[17px] text-white/75 mb-8">Start free. Scale as you grow. Cancel anytime.</p>
+          <p className="text-[17px] text-slate-600 mb-8">Start free. Scale as you grow. Cancel anytime.</p>
 
           {/* Toggle */}
           <div className="inline-flex items-center gap-1 glass border border-white/60 rounded-full p-1.5 shadow-sm">
@@ -80,20 +97,8 @@ export default function Pricing() {
           </div>
         </motion.div>
 
-        {/* Most Popular badge */}
-        <div className="flex justify-center mb-4">
-          <div className="w-full max-w-5xl relative">
-            <div className="absolute left-1/2 -translate-x-1/2 -top-4 z-10">
-              <span className="flex items-center gap-1.5 bg-red-600 text-white text-[11px] font-black px-4 py-1.5 rounded-full shadow-lg shadow-red-600/30">
-                <Zap className="w-3 h-3 fill-white" />
-                Most Popular
-              </span>
-            </div>
-          </div>
-        </div>
-
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 max-w-6xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
@@ -107,6 +112,16 @@ export default function Pricing() {
                   : "shadow-md shadow-slate-200/50 hover:shadow-lg hover:-translate-y-1"
               }`}
             >
+              {/* Most Popular badge */}
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                  <span className="flex items-center gap-1.5 bg-red-600 text-white text-[11px] font-black px-4 py-1.5 rounded-full shadow-lg shadow-red-600/30 whitespace-nowrap">
+                    <Zap className="w-3 h-3 fill-white" />
+                    Most Popular
+                  </span>
+                </div>
+              )}
+
               <div className="p-8 flex flex-col h-full">
                 {/* Plan name */}
                 <div className="mb-6">
@@ -116,15 +131,32 @@ export default function Pricing() {
 
                 {/* Price */}
                 <div className="mb-2">
-                  {plan.monthlyPrice ? (
+                  {plan.monthlyPrice === null ? (
+                    <p style={SERIF} className="text-4xl font-black text-slate-900">Custom</p>
+                  ) : plan.free ? (
                     <div className="flex items-end gap-1">
-                      <span style={SERIF} className="text-5xl font-black text-slate-900">${yearly ? plan.yearlyPrice : plan.monthlyPrice}</span>
-                      <span className="text-slate-400 text-sm mb-2">/mo</span>
+                      <span style={SERIF} className="text-5xl font-black text-slate-900">$0</span>
+                      <span className="text-slate-400 text-sm mb-2">forever</span>
                     </div>
                   ) : (
-                    <p style={SERIF} className="text-4xl font-black text-slate-900">Custom</p>
+                    <div className="flex items-end gap-1">
+                      <span style={SERIF} className="text-5xl font-black text-slate-900">
+                        ${yearly ? plan.yearlyPrice : plan.monthlyPrice}
+                      </span>
+                      <span className="text-slate-400 text-sm mb-2">/mo</span>
+                    </div>
                   )}
                 </div>
+
+                {/* Yearly savings */}
+                <div className="h-5 mb-1">
+                  {yearly && plan.yearlyTotal && (
+                    <p className="text-[12px] text-slate-500">
+                      ${plan.yearlyTotal}/yr <span className="text-emerald-600 font-bold">Save 20%</span>
+                    </p>
+                  )}
+                </div>
+
                 <p className={`text-[13px] font-bold mb-1 ${plan.creditsColor}`}>{plan.credits}</p>
                 <p className="text-[13px] text-slate-500 mb-6 pb-6 border-b border-slate-100">{plan.tagline}</p>
 
@@ -156,7 +188,7 @@ export default function Pricing() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
           transition={{ delay: 0.5 }}
-          className="text-center text-white/40 text-sm mt-8"
+          className="text-center text-slate-400 text-sm mt-8"
         >
           All plans include a 14-day free trial · No credit card required to start
         </motion.p>

@@ -81,10 +81,10 @@ export default function Testimonials() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-white leading-tight tracking-tight mb-5">
+          <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-slate-900 leading-tight tracking-tight mb-5">
             Teams Ship Faster<br />with Pushable AI
           </h2>
-          <p className="text-[17px] text-white/75 leading-relaxed">
+          <p className="text-[17px] text-slate-600 leading-relaxed">
             Join hundreds of teams who&#39;ve transformed their operations with AI.
           </p>
         </motion.div>

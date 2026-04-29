@@ -29,11 +29,11 @@ export default function WhyTrust() {
             className="lg:sticky lg:top-28"
           >
             <p className="text-[11px] font-black text-red-600 uppercase tracking-[0.2em] mb-4">Why 500+ Teams Choose Us</p>
-            <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-white leading-tight tracking-tight mb-6">
+            <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-slate-900 leading-tight tracking-tight mb-6">
               Why Businesses<br />Trust<br />
               <span className="gradient-text">Pushable AI?</span>
             </h2>
-            <p className="text-[17px] text-white/75 leading-relaxed mb-8 max-w-sm">
+            <p className="text-[17px] text-slate-600 leading-relaxed mb-8 max-w-sm">
               We didn&#39;t just build an AI tool. We built an AI workforce that performs,
               scales, and gets smarter — day after day.
             </p>
@@ -46,19 +46,6 @@ export default function WhyTrust() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
 
-            {/* Stats strip */}
-            <div className="grid grid-cols-3 gap-4 mt-12 pt-10 border-t border-white/20">
-              {[
-                { v: "500+", l: "Teams" },
-                { v: "99.9%", l: "Uptime" },
-                { v: "SOC 2", l: "Compliant" },
-              ].map(s => (
-                <div key={s.v} className="text-center">
-                  <p style={SERIF} className="text-2xl font-black text-white">{s.v}</p>
-                  <p className="text-[12px] text-white/55 mt-0.5">{s.l}</p>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Right — 2×3 card grid */}

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, HelpCircle } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', serif" };
 
@@ -48,10 +48,10 @@ export default function FAQ() {
           className="text-center mb-14"
         >
           <p className="text-[11px] font-black text-red-600 uppercase tracking-[0.2em] mb-4">Frequently Asked Questions</p>
-          <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-white leading-tight tracking-tight mb-5">
+          <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-slate-900 leading-tight tracking-tight mb-5">
             Got Questions?<br />We Have Answers.
           </h2>
-          <p className="text-[17px] text-white/75">Everything you need to know about Pushable AI.</p>
+          <p className="text-[17px] text-slate-600">Everything you need to know about Pushable AI.</p>
         </motion.div>
 
         {/* Accordion */}
@@ -111,7 +111,7 @@ export default function FAQ() {
           transition={{ delay: 0.4 }}
           className="text-center mt-12"
         >
-          <p className="text-white/55 mb-3">Still have questions?</p>
+          <p className="text-slate-500 mb-3">Still have questions?</p>
           <a
             href="#"
             className="inline-flex items-center gap-1.5 text-red-600 font-bold hover:text-red-500 underline underline-offset-4 decoration-red-400/50 hover:decoration-red-500 transition-colors"
