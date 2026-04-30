@@ -109,10 +109,14 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Gradient fade — blends hero video into the beige section below */}
+      {/* Beige mist — 25% of previous size */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-10 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent 0%, #F0EBD8 100%)" }}
+        className="absolute bottom-0 left-0 right-0 pointer-events-none"
+        style={{
+          height: "45px",
+          zIndex: 11,
+          background: "linear-gradient(to bottom, transparent 0%, rgba(240,235,216,0.05) 18%, rgba(240,235,216,0.13) 35%, rgba(240,235,216,0.28) 52%, rgba(240,235,216,0.50) 68%, rgba(240,235,216,0.74) 83%, rgba(240,235,216,0.91) 93%, #F0EBD8 100%)",
+        }}
       />
 
     </section>

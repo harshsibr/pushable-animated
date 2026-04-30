@@ -13,7 +13,7 @@ export default function LandscapeBackground() {
         style={{ objectPosition: "center center" }}
       >
         <source
-          src="https://videos.pexels.com/video-files/33639741/14295865_2560_1440_30fps.mp4"
+          src="https://www.pexels.com/download/video/9721786/"
           type="video/mp4"
         />
       </video>
