@@ -4,19 +4,20 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const navLinks = [
-  { label: "Product" },
-  { label: "How it Works" },
-  { label: "Industries" },
-  { label: "Pricing" },
-  { label: "FAQ" },
-  { label: "Contact" },
+  { label: "How it Works", href: "/#how-it-works" },
+  { label: "Industries",   href: "/#agents" },
+  { label: "Pricing",      href: "/#pricing" },
+  { label: "FAQ",          href: "/#faq" },
+  { label: "Blog",         href: "/blog" },
+  { label: "Contact",      href: "/contact" },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled]     = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -34,31 +35,31 @@ export default function Navbar() {
       >
         <div className={`bg-black rounded-full px-5 py-3 flex items-center justify-between gap-6 transition-all duration-300 ${scrolled ? "shadow-2xl shadow-black/40" : ""}`}>
           {/* Logo */}
-          <a href="#" className="shrink-0 flex items-center gap-2">
+          <Link href="/" className="shrink-0 flex items-center gap-2">
             <Image src="/logo.png.png" alt="Pushable" width={120} height={36} style={{ height: 32, width: "auto" }} priority unoptimized />
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href="#"
+                href={link.href}
                 className="px-3 py-1.5 text-[13px] font-medium text-white/80 hover:text-white rounded-full hover:bg-white/10 transition-all"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* CTA */}
-          <a
-            href="#"
+          <Link
+            href="/contact"
             className="hidden lg:inline-flex items-center gap-1.5 bg-red-600 hover:bg-red-500 text-white text-[13px] font-bold px-5 py-2.5 rounded-full transition-all shadow-lg shadow-red-600/30 hover:shadow-red-500/40 shrink-0"
           >
             Get Started
             <span className="text-[12px]">→</span>
-          </a>
+          </Link>
 
           {/* Mobile toggle */}
           <button
@@ -82,20 +83,25 @@ export default function Navbar() {
           >
             <nav className="flex flex-col gap-1 flex-1">
               {navLinks.map((link, i) => (
-                <motion.a key={link.label} href="#"
+                <motion.div key={link.label}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
-                  className="px-4 py-4 text-[17px] font-semibold text-white/80 hover:text-white hover:bg-white/8 rounded-2xl transition-all"
-                  onClick={() => setMobileOpen(false)}>
-                  {link.label}
-                </motion.a>
+                >
+                  <Link
+                    href={link.href}
+                    className="block px-4 py-4 text-[17px] font-semibold text-white/80 hover:text-white hover:bg-white/8 rounded-2xl transition-all"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
             </nav>
             <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
-              <a href="#" className="text-center py-4 rounded-full bg-red-600 text-white font-bold flex items-center justify-center gap-1.5">
+              <Link href="/contact" className="text-center py-4 rounded-full bg-red-600 text-white font-bold flex items-center justify-center gap-1.5" onClick={() => setMobileOpen(false)}>
                 Get Started →
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

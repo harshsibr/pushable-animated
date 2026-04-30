@@ -41,13 +41,18 @@ export default function LoadingScreen() {
 
     Promise.all([minTime, videoReady]).then(dismiss);
 
+    // If already dismissed (e.g. page re-mount after navigation), fire immediately
+    if (typeof window !== "undefined" && window.__heroReady) {
+      setVisible(false);
+    }
+
     return () => {
       dismissed = true;
     };
   }, []);
 
   return (
-    <AnimatePresence onExitComplete={() => window.dispatchEvent(new CustomEvent("heroReady"))}>
+    <AnimatePresence onExitComplete={() => { window.__heroReady = true; window.dispatchEvent(new CustomEvent("heroReady")); }}>
       {visible && (
         <motion.div
           initial={{ y: "0%" }}

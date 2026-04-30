@@ -31,9 +31,9 @@ const steps = [
   },
   {
     num: "03", label: "Add Your Skills", icon: Settings,
-    title: "Teach your agent your workflow.",
-    desc: "Define what your agent should know, decide, and do — all in plain English. Add business rules, escalation paths, and context. It learns your exact way of working.",
-    features: ["Plain English configuration", "Custom rules and logic", "Context-aware decisions"],
+    title: "Train your agent, your way.",
+    desc: "Add skills to your agent in plain English — rules, knowledge, and decision logic. Each skill is saved so your agent remembers exactly how you work, every time.",
+    features: ["Skills saved to agent memory", "Plain English training", "Agent learns your preferences"],
     badge: "Configured in minutes",
     glow: "group-hover:bg-emerald-600/10",
     iconRing: "bg-emerald-500/30 border-emerald-400/50",

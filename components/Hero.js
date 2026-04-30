@@ -11,6 +11,8 @@ export default function Hero() {
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
+    // If loading screen already dismissed (e.g. navigated back), start immediately
+    if (window.__heroReady) { setStarted(true); return; }
     const handler = () => setStarted(true);
     window.addEventListener("heroReady", handler);
     return () => window.removeEventListener("heroReady", handler);
