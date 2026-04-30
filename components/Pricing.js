@@ -185,15 +185,6 @@ export default function Pricing() {
           ))}
         </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
-          transition={{ delay: 0.5 }}
-          className="text-center text-slate-400 text-sm mt-8"
-        >
-          All plans include a 14-day free trial · No credit card required to start
-        </motion.p>
       </div>
     </section>
   );

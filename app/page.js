@@ -5,7 +5,6 @@ import ShowcaseCards from "@/components/ShowcaseCards";
 import HowItWorks from "@/components/HowItWorks";
 import Industries from "@/components/Industries";
 import Pricing from "@/components/Pricing";
-import Testimonials from "@/components/Testimonials";
 import WhyTrust from "@/components/WhyTrust";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
@@ -26,14 +25,12 @@ export default function Home() {
         <div style={{ background: "#F5F0E5" }}><Industries /></div>
         <div style={{ height: 80, background: "linear-gradient(to bottom,#F5F0E5,#E3D9C4)" }} />
         <div style={{ background: "#E3D9C4" }}><Pricing /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#E3D9C4,#F2EBD8)" }} />
-        <div style={{ background: "#F2EBD8" }}><Testimonials /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#F2EBD8,#E6DCC8)" }} />
-        <div style={{ background: "#E6DCC8" }}><WhyTrust /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#E6DCC8,#F5EFE2)" }} />
-        <div style={{ background: "#F5EFE2" }}><FAQ /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#F5EFE2,#EDE5D2)" }} />
-        <div style={{ background: "#EDE5D2" }}><CTASection /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#E3D9C4,#F0EBD8)" }} />
+        <div style={{ background: "#F0EBD8" }}><WhyTrust /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#F0EBD8,#E8E0CA)" }} />
+        <div style={{ background: "#E8E0CA" }}><FAQ /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#E8E0CA,#F0EBD8)" }} />
+        <div style={{ background: "#F0EBD8" }}><CTASection /></div>
         <Footer />
       </div>
     </main>

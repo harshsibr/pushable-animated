@@ -103,22 +103,6 @@ export default function FAQ() {
           ))}
         </div>
 
-        {/* Bottom prompt */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ delay: 0.4 }}
-          className="text-center mt-12"
-        >
-          <p className="text-slate-500 mb-3">Still have questions?</p>
-          <a
-            href="#"
-            className="inline-flex items-center gap-1.5 text-red-600 font-bold hover:text-red-500 underline underline-offset-4 decoration-red-400/50 hover:decoration-red-500 transition-colors"
-          >
-            Chat with our team →
-          </a>
-        </motion.div>
       </div>
     </section>
   );

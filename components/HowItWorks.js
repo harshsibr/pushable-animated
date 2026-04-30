@@ -2,50 +2,50 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { MessageSquare, Plug, BarChart3, Zap, ArrowRight, CheckCircle } from "lucide-react";
+import { UserPlus, Plug, Settings, Zap, ArrowRight, CheckCircle } from "lucide-react";
 
 const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', serif" };
 
 const steps = [
   {
-    num: "01", label: "Describe", icon: MessageSquare,
-    title: "Start with a conversation.",
-    desc: "Tell Pushable AI what you want to automate in plain English. No flowcharts, no developers needed. Your agent is configured and ready in minutes.",
-    features: ["Natural language setup", "No technical knowledge required", "Live in under 10 minutes"],
-    badge: "< 10 min to go live",
+    num: "01", label: "Signup", icon: UserPlus,
+    title: "Create your account in seconds.",
+    desc: "Sign up with just your email — no credit card, no technical setup, no onboarding call required. Your Pushable AI workspace is ready the moment you register.",
+    features: ["No credit card required", "Workspace ready instantly", "Get started in under 1 minute"],
+    badge: "< 1 min to sign up",
     glow: "group-hover:bg-red-600/10",
     iconRing: "bg-red-500/30 border-red-400/50",
     iconColor: "text-red-400",
     numColor: "text-red-400/25",
   },
   {
-    num: "02", label: "Connect", icon: Plug,
-    title: "One-click integrations.",
-    desc: "Link Slack, Gmail, HubSpot, and 50+ more tools in one click — no code, no APIs. Your assistant learns your workflow and starts immediately.",
-    features: ["50+ one-click integrations", "No code, no APIs to configure", "Syncs with live data instantly"],
-    badge: "Syncing live data",
+    num: "02", label: "Integrate Your Tools", icon: Plug,
+    title: "Connect your tools with one click.",
+    desc: "Link Slack, Gmail, HubSpot, and 100+ more tools without any code or API keys. Your agent learns what's connected and is ready to act on live data immediately.",
+    features: ["100+ one-click integrations", "No code, no API keys needed", "Syncs with live data instantly"],
+    badge: "100+ integrations",
     glow: "group-hover:bg-blue-600/10",
     iconRing: "bg-blue-500/30 border-blue-400/50",
     iconColor: "text-blue-400",
     numColor: "text-blue-400/25",
   },
   {
-    num: "03", label: "Monitor", icon: BarChart3,
-    title: "Watch it work in real time.",
-    desc: "A live dashboard shows exactly what your agent is doing, task by task. Review, refine, and expand to new workflows as your needs grow.",
-    features: ["Live task execution feed", "Full audit trail included", "Scale to more agents instantly"],
-    badge: "99.9% uptime",
+    num: "03", label: "Add Your Skills", icon: Settings,
+    title: "Teach your agent your workflow.",
+    desc: "Define what your agent should know, decide, and do — all in plain English. Add business rules, escalation paths, and context. It learns your exact way of working.",
+    features: ["Plain English configuration", "Custom rules and logic", "Context-aware decisions"],
+    badge: "Configured in minutes",
     glow: "group-hover:bg-emerald-600/10",
     iconRing: "bg-emerald-500/30 border-emerald-400/50",
     iconColor: "text-emerald-400",
     numColor: "text-emerald-400/25",
   },
   {
-    num: "04", label: "Scale", icon: Zap,
-    title: "Deploy more as you grow.",
-    desc: "Adding a second or tenth agent is as simple as the first. Every new agent learns from your existing workflows automatically.",
-    features: ["Unlimited parallel agents", "Agents learn from each other", "Enterprise-ready infrastructure"],
-    badge: "10× capacity",
+    num: "04", label: "Ready to Work", icon: Zap,
+    title: "Your agent goes live instantly.",
+    desc: "Hit deploy and your agent starts working immediately. It handles repetitive tasks, executes workflows on schedule or trigger, and reports back — all without lifting a finger.",
+    features: ["Runs 24/7 without interruption", "Fully automated task handling", "Real-time reporting dashboard"],
+    badge: "Live immediately",
     glow: "group-hover:bg-violet-600/10",
     iconRing: "bg-violet-500/30 border-violet-400/50",
     iconColor: "text-violet-400",
@@ -186,7 +186,6 @@ export default function HowItWorks() {
           className="text-center"
         >
           <a href="#" className="group inline-flex items-center gap-2.5 bg-red-600 hover:bg-red-500 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-red-600/25 hover:shadow-red-500/35 hover:-translate-y-0.5 transition-all text-[15px]">
-            <MessageSquare className="w-5 h-5" />
             Talk to our Expert
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>

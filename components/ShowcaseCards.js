@@ -41,9 +41,9 @@ const slides = [
 /* activepieces-style stacking — each depth level shifts right, up, and rotates slightly */
 const STACK = [
   { x: 0,   y: 0,    rotate: 0,   scale: 1,     opacity: 1,    z: 40 },
-  { x: 32,  y: -44,  rotate: 1.2, scale: 0.984, opacity: 0.80, z: 30 },
-  { x: 64,  y: -88,  rotate: 2.4, scale: 0.968, opacity: 0.58, z: 20 },
-  { x: 96,  y: -132, rotate: 3.6, scale: 0.952, opacity: 0.38, z: 10 },
+  { x: 8,  y: -44,  rotate: 1.2, scale: 0.984, opacity: 0.80, z: 30 },
+  { x: 16,  y: -88,  rotate: 2.4, scale: 0.968, opacity: 0.58, z: 20 },
+  { x: 32,  y: -132, rotate: 3.6, scale: 0.952, opacity: 0.38, z: 10 },
 ];
 
 export default function ShowcaseCards() {
@@ -102,7 +102,7 @@ export default function ShowcaseCards() {
         </div>
 
         {/* ── Main layout ── */}
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16 items-center">
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-24 items-center">
 
           {/* Left: description + tab list */}
           <AnimatePresence mode="wait">
