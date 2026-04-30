@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Product" },
@@ -33,12 +34,8 @@ export default function Navbar() {
       >
         <div className={`bg-black rounded-full px-5 py-3 flex items-center justify-between gap-6 transition-all duration-300 ${scrolled ? "shadow-2xl shadow-black/40" : ""}`}>
           {/* Logo */}
-          <a href="#" className="shrink-0">
-            <img
-              src="/logo.png.png"
-              alt="Pushable"
-              className="h-8 w-auto object-contain"
-            />
+          <a href="#" className="shrink-0 flex items-center gap-2">
+            <Image src="/logo.png.png" alt="Pushable" width={120} height={36} style={{ height: 32, width: "auto" }} priority unoptimized />
           </a>
 
           {/* Desktop nav */}

@@ -4,7 +4,8 @@
       "Bash(npx create-next-app@latest . --js --tailwind --app --no-src-dir --no-import-alias --yes)",
       "Bash(npm install *)",
       "Bash(npm run *)",
-      "Bash(curl -s http://localhost:3000)"
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s \"https://www.activepieces.com/\")"
     ]
   }
 }

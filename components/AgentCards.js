@@ -15,7 +15,7 @@ const agents = [
     title: "Build a Finance Workflow",
     desc: "Build a workflow that auto-generates invoices, chases payments, flags anomalies, and compiles reports — fully configured around your billing cycle and tools.",
     features: ["Auto-generate & send invoices", "Track expenses in real-time", "Compile monthly P&L reports", "Flag payment anomalies"],
-    screenshot: "/pairing.png", imagePos: "center center", imageFit: "cover",
+    screenshot: "/pairing.png", imagePos: "center center",
   },
   {
     icon: Users,
@@ -24,7 +24,7 @@ const agents = [
     title: "Simplify Your HR Workflow",
     desc: "Streamline recruitment, automate onboarding, manage employee records and routine HR tasks. Your HR agent runs people operations while your team builds culture.",
     features: ["Automated resume screening", "Onboarding flow management", "Leave & attendance tracking", "Employee record keeping"],
-    screenshot: "/create_agent.png", imagePos: "top center", imageFit: "cover",
+    screenshot: "/create.png", imagePos: "top center",
   },
   {
     icon: TrendingUp,
@@ -33,7 +33,7 @@ const agents = [
     title: "Automate Your Sales Pipeline",
     desc: "Capture inbound leads, score prospects, nurture relationships, and move deals forward automatically. Your sales agent works every lead, day and night.",
     features: ["Lead qualification & scoring", "Automated follow-up sequences", "CRM pipeline updates", "Deal progress tracking"],
-    screenshot: "/chat.png", imagePos: "center center", imageFit: "contain",
+    screenshot: "/chat.png", imagePos: "center center",
   },
   {
     icon: Settings,
@@ -42,7 +42,7 @@ const agents = [
     title: "Automate Daily Workflows",
     desc: "Coordinate tasks, manage schedules, track deliverables, and keep every department aligned without manual hand-holding. The operations backbone of your business.",
     features: ["Cross-team task coordination", "Meeting scheduling automation", "Status report generation", "SLA monitoring & alerts"],
-    screenshot: "/integrations.png", imagePos: "top center", imageFit: "cover",
+    screenshot: "/integration.png", imagePos: "top center",
   },
 ];
 
@@ -168,7 +168,7 @@ export default function AgentCards() {
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
-              className="grid lg:grid-cols-2 gap-6 items-stretch"
+              className="grid lg:grid-cols-2 gap-6 items-center"
             >
               {/* Left: content card — slides in from left */}
               <motion.div
@@ -253,7 +253,7 @@ export default function AgentCards() {
                 </div>
               </motion.div>
 
-              {/* Right: dark mockup — slides in from right + floats */}
+              {/* Right: full natural image — no fixed height, no blank space, no cropping */}
               <motion.div
                 initial={{ opacity: 0, x: 60 }}
                 animate={panelInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
@@ -263,41 +263,17 @@ export default function AgentCards() {
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="glass-dark rounded-3xl overflow-hidden shadow-2xl shadow-black/30 flex flex-col"
+                  className="w-full rounded-3xl overflow-hidden shadow-2xl shadow-black/15"
                 >
-                  {/* Browser bar */}
-                  <div className="flex items-center gap-2 px-5 py-3.5 bg-black/50 border-b border-white/8 shrink-0">
-                    <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-400/80" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
-                      <div className="w-3 h-3 rounded-full bg-green-400/80" />
-                    </div>
-                    <div className="flex-1 mx-3">
-                      <div className="bg-white/8 rounded-lg px-3 py-1.5 text-xs text-white/40 text-center border border-white/8">
-                        pushable.ai / workflow-builder
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[11px] text-emerald-400 font-semibold">LIVE</span>
-                    </div>
-                  </div>
-
-                  {/* Screenshot — fixed height so next/image fill works */}
-                  <div
-                    className="relative w-full overflow-hidden"
-                    style={{ height: 420, background: agent.imageFit === "contain" ? "#1a1a1a" : "transparent" }}
-                  >
-                    <Image
-                      src={agent.screenshot}
-                      alt={`${agent.label} screenshot`}
-                      fill
-                      style={{ objectFit: agent.imageFit, objectPosition: agent.imagePos }}
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      priority={active === 0}
-                      unoptimized
-                    />
-                  </div>
+                  <Image
+                    src={agent.screenshot}
+                    alt={`${agent.label} screenshot`}
+                    width={1920}
+                    height={1080}
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                    priority
+                    unoptimized
+                  />
                 </motion.div>
               </motion.div>
             </motion.div>

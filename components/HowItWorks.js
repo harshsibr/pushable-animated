@@ -190,7 +190,7 @@ export default function HowItWorks() {
             Talk to our Expert
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
-          <p className="text-[13px] text-slate-400 mt-3">Free consultation · No commitment</p>
+
         </motion.div>
 
       </div>

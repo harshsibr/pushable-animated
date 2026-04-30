@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustedBy from "@/components/TrustedBy";
-import AgentCards from "@/components/AgentCards";
+import ShowcaseCards from "@/components/ShowcaseCards";
 import HowItWorks from "@/components/HowItWorks";
 import Industries from "@/components/Industries";
 import Pricing from "@/components/Pricing";
@@ -19,7 +19,7 @@ export default function Home() {
       {/* Post-hero sections — beige family palette, TrustedBy + AgentCards share the same tone */}
       <div className="relative z-10">
         <div style={{ background: "#F0EBD8" }}><TrustedBy /></div>
-        <div style={{ background: "#F0EBD8" }}><AgentCards /></div>
+        <div style={{ background: "#F0EBD8" }}><ShowcaseCards /></div>
         <div style={{ height: 80, background: "linear-gradient(to bottom,#F0EBD8,#E8E0CA)" }} />
         <div style={{ background: "#E8E0CA" }}><HowItWorks /></div>
         <div style={{ height: 80, background: "linear-gradient(to bottom,#E8E0CA,#F5F0E5)" }} />
