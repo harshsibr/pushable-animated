@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', serif" };
+const SERIF = { fontFamily: "var(--font-inter), Inter, -apple-system, sans-serif" };
 
 const integrations = [
   { name: "Slack",      abbr: "SL", bg: "bg-purple-50 border-purple-100",   text: "text-purple-600" },

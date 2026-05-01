@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import Image from "next/image";
 import { DollarSign, Users, TrendingUp, Settings } from "lucide-react";
 
-const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', serif" };
+const SERIF = { fontFamily: "var(--font-inter), Inter, -apple-system, sans-serif" };
 
 const slides = [
   {

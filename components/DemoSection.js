@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Play, ArrowRight, CheckCircle } from "lucide-react";
 
-const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', serif" };
+const SERIF = { fontFamily: "var(--font-inter), Inter, -apple-system, sans-serif" };
 
 export default function DemoSection() {
   const [playing, setPlaying] = useState(false);

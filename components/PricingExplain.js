@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"; // useState used by Animate
 import { motion, useInView } from "framer-motion";
 import { Zap, CreditCard, RotateCcw } from "lucide-react";
 
-const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', serif" };
+const SERIF = { fontFamily: "var(--font-inter), Inter, -apple-system, sans-serif" };
 
 function AnimatedCounter({ target, suffix = "", duration = 2 }) {
   const [count, setCount] = useState(0);

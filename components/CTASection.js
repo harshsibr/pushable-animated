@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MessageSquare } from "lucide-react";
 
-const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', serif" };
+const SERIF = { fontFamily: "var(--font-inter), Inter, -apple-system, sans-serif" };
 
 export default function CTASection() {
   return (

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Cpu, Brain, RefreshCw, Clock, Shield, TrendingUp, ArrowRight } from "lucide-react";
 
-const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', serif" };
+const SERIF = { fontFamily: "var(--font-inter), Inter, -apple-system, sans-serif" };
 
 const reasons = [
   { icon: RefreshCw, title: "Reduced Manual Work",       desc: "Eliminate repetitive tasks that drain your team's energy. Pushable AI handles the routine so your people focus on work that requires human judgment." },

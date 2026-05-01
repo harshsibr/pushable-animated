@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import TrustedBy from "@/components/TrustedBy";
 import ShowcaseCards from "@/components/ShowcaseCards";
 import HowItWorks from "@/components/HowItWorks";
 import Industries from "@/components/Industries";
@@ -15,22 +14,20 @@ export default function Home() {
     <main className="relative min-h-screen overflow-x-hidden">
       <Navbar />
       <Hero />
-      {/* Post-hero sections — beige family palette, TrustedBy + AgentCards share the same tone */}
       <div className="relative z-10">
-        <div style={{ background: "#F0EBD8" }}><TrustedBy /></div>
-        <div style={{ background: "#F0EBD8" }}><ShowcaseCards /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#F0EBD8,#E8E0CA)" }} />
-        <div style={{ background: "#E8E0CA" }}><HowItWorks /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#E8E0CA,#F5F0E5)" }} />
-        <div style={{ background: "#F5F0E5" }}><Industries /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#F5F0E5,#E3D9C4)" }} />
-        <div style={{ background: "#E3D9C4" }}><Pricing /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#E3D9C4,#F0EBD8)" }} />
-        <div style={{ background: "#F0EBD8" }}><WhyTrust /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#F0EBD8,#E8E0CA)" }} />
-        <div style={{ background: "#E8E0CA" }}><FAQ /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#E8E0CA,#F0EBD8)" }} />
-        <div style={{ background: "#F0EBD8" }}><CTASection /></div>
+        <div style={{ background: "#DCFCE7" }}><ShowcaseCards /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#DCFCE7,#F5F4F1)" }} />
+        <div style={{ background: "#F5F4F1" }}><HowItWorks /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#F5F4F1,#F0FDF4)" }} />
+        <div style={{ background: "#F0FDF4" }}><Industries /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#F0FDF4,#F5F3FF)" }} />
+        <div style={{ background: "#F5F3FF" }}><Pricing /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#F5F3FF,#FFFBEB)" }} />
+        <div style={{ background: "#FFFBEB" }}><WhyTrust /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#FFFBEB,#F0F9FF)" }} />
+        <div style={{ background: "#F0F9FF" }}><FAQ /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#F0F9FF,#FFF1F2)" }} />
+        <div style={{ background: "#FFF1F2" }}><CTASection /></div>
         <Footer />
       </div>
     </main>

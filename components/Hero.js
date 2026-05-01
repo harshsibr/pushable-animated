@@ -1,17 +1,26 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
+import { MarqueeStrip } from "./TrustedBy";
 
-const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', serif" };
+const SERIF = { fontFamily: "var(--font-inter), Inter, -apple-system, sans-serif" };
 
 
 export default function Hero() {
   const [started, setStarted] = useState(false);
+  const heroRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+
+  const bgScale        = useTransform(scrollYProgress, [0, 1], [1, 1.22]);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 0.72], [0, 1]);
 
   useEffect(() => {
-    // If loading screen already dismissed (e.g. navigated back), start immediately
     if (window.__heroReady) { setStarted(true); return; }
     const handler = () => setStarted(true);
     window.addEventListener("heroReady", handler);
@@ -19,9 +28,27 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden">
+    <section ref={heroRef} className="relative min-h-screen flex flex-col overflow-hidden">
 
-      {/* Vertically centered content */}
+      {/* Zoom-on-scroll background */}
+      <motion.div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "url('/background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          scale: bgScale,
+          transformOrigin: "center center",
+        }}
+      />
+
+      {/* Scroll colour overlay */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "#DCFCE7", opacity: overlayOpacity, zIndex: 2 }}
+      />
+
+      {/* Main content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-24">
         <div className="space-y-7 text-center max-w-4xl w-full">
 
@@ -111,13 +138,35 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Beige mist — 25% of previous size */}
+      {/* White marquee — sits at the bottom of the hero, same sizing as standalone TrustedBy */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={started ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ delay: 1.1, duration: 0.9 }}
+        className="relative z-10 pb-40 pt-4"
+      >
+        <p className="text-center text-[11px] font-black text-white uppercase tracking-[0.22em] mb-4">
+          Trusted by AI Leaders
+        </p>
+        <div
+          className="max-w-5xl mx-auto overflow-hidden space-y-3"
+          style={{
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+            maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+          }}
+        >
+          <MarqueeStrip white />
+        </div>
+      </motion.div>
+
+
+      {/* Bottom mist — blends hero into the greenish first section (#DCFCE7) */}
       <div
         className="absolute bottom-0 left-0 right-0 pointer-events-none"
         style={{
-          height: "45px",
+          height: "120px",
           zIndex: 11,
-          background: "linear-gradient(to bottom, transparent 0%, rgba(240,235,216,0.05) 18%, rgba(240,235,216,0.13) 35%, rgba(240,235,216,0.28) 52%, rgba(240,235,216,0.50) 68%, rgba(240,235,216,0.74) 83%, rgba(240,235,216,0.91) 93%, #F0EBD8 100%)",
+          background: "linear-gradient(to bottom, transparent 0%, rgba(220,252,231,0.15) 25%, rgba(220,252,231,0.38) 48%, rgba(220,252,231,0.68) 68%, rgba(220,252,231,0.88) 84%, #DCFCE7 100%)",
         }}
       />
 

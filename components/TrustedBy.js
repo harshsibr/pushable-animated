@@ -116,16 +116,20 @@ const brands = [
 const set1 = [...brands, ...brands];
 const set2 = [...brands.slice(7), ...brands.slice(0, 7), ...brands.slice(7), ...brands.slice(0, 7)];
 
-function BrandItem({ Icon, name }) {
+function BrandItem({ Icon, name, white = false }) {
   return (
     <div className="flex items-center gap-2.5 px-5 mx-3 shrink-0">
-      <Icon />
-      <span className="text-[14px] font-semibold text-slate-700 whitespace-nowrap">{name}</span>
+      <div style={white ? { filter: "brightness(0) invert(1)", opacity: 0.85 } : {}}>
+        <Icon />
+      </div>
+      <span className={`text-[14px] font-semibold whitespace-nowrap ${white ? "text-white" : "text-slate-700"}`}>
+        {name}
+      </span>
     </div>
   );
 }
 
-export function MarqueeStrip() {
+export function MarqueeStrip({ white = false }) {
   return (
     <div
       className="w-full overflow-hidden space-y-3"
@@ -136,12 +140,12 @@ export function MarqueeStrip() {
     >
       <div className="flex">
         <div className="flex marquee-track will-change-transform">
-          {set1.map((b, i) => <BrandItem key={i} Icon={b.Icon} name={b.name} />)}
+          {set1.map((b, i) => <BrandItem key={i} Icon={b.Icon} name={b.name} white={white} />)}
         </div>
       </div>
       <div className="flex">
         <div className="flex marquee-track-reverse will-change-transform">
-          {set2.map((b, i) => <BrandItem key={i} Icon={b.Icon} name={b.name} />)}
+          {set2.map((b, i) => <BrandItem key={i} Icon={b.Icon} name={b.name} white={white} />)}
         </div>
       </div>
     </div>

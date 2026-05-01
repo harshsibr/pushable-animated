@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useInView, useScroll, useTransform } from "fra
 import { DollarSign, Users, TrendingUp, Settings, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-const SERIF = { fontFamily: "var(--font-playfair), Georgia, 'Times New Roman', serif" };
+const SERIF = { fontFamily: "var(--font-inter), Inter, -apple-system, sans-serif" };
 
 const agents = [
   {
