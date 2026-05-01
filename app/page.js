@@ -18,16 +18,16 @@ export default function Home() {
         <div style={{ background: "#DCFCE7" }}><ShowcaseCards /></div>
         <div style={{ height: 80, background: "linear-gradient(to bottom,#DCFCE7,#F5F4F1)" }} />
         <div style={{ background: "#F5F4F1" }}><HowItWorks /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#F5F4F1,#F0FDF4)" }} />
-        <div style={{ background: "#F0FDF4" }}><Industries /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#F0FDF4,#F5F3FF)" }} />
-        <div style={{ background: "#F5F3FF" }}><Pricing /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#F5F3FF,#FFFBEB)" }} />
-        <div style={{ background: "#FFFBEB" }}><WhyTrust /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#FFFBEB,#F0F9FF)" }} />
-        <div style={{ background: "#F0F9FF" }}><FAQ /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#F0F9FF,#FFF1F2)" }} />
-        <div style={{ background: "#FFF1F2" }}><CTASection /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#F5F4F1,#DCFCE7)" }} />
+        <div style={{ background: "#DCFCE7" }}><Industries /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#DCFCE7,#EFF6FF)" }} />
+        <div style={{ background: "#EFF6FF" }}><Pricing /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#EFF6FF,#DCFCE7)" }} />
+        <div style={{ background: "#DCFCE7" }}><WhyTrust /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#DCFCE7,#FFF7ED)" }} />
+        <div style={{ background: "#FFF7ED" }}><FAQ /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#FFF7ED,#DCFCE7)" }} />
+        <div style={{ background: "#DCFCE7" }}><CTASection /></div>
         <Footer />
       </div>
     </main>

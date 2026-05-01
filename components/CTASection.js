@@ -20,7 +20,7 @@ export default function CTASection() {
           <h2 style={SERIF} className="text-5xl md:text-6xl xl:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight">
             Ready to Take Your
             <br />
-            <span className="gradient-text">Business Forward?</span>
+            <span className="text-slate-900">Business Forward?</span>
           </h2>
 
           <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">

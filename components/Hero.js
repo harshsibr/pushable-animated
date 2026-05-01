@@ -18,7 +18,9 @@ export default function Hero() {
   });
 
   const bgScale        = useTransform(scrollYProgress, [0, 1], [1, 1.22]);
-  const overlayOpacity = useTransform(scrollYProgress, [0, 0.72], [0, 1]);
+  const greenRise      = useTransform(scrollYProgress, [0.08, 0.92], [0, 1]);
+  const marqueeOpacity = useTransform(scrollYProgress, [0.04, 0.22], [1, 0]);
+  const contentOpacity = useTransform(scrollYProgress, [0.04, 0.28], [1, 0]);
 
   useEffect(() => {
     if (window.__heroReady) { setStarted(true); return; }
@@ -42,14 +44,9 @@ export default function Hero() {
         }}
       />
 
-      {/* Scroll colour overlay */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: "#DCFCE7", opacity: overlayOpacity, zIndex: 2 }}
-      />
 
       {/* Main content */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-24">
+      <motion.div style={{ opacity: contentOpacity }} className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-24">
         <div className="space-y-7 text-center max-w-4xl w-full">
 
           {/* Headline */}
@@ -84,9 +81,6 @@ export default function Hero() {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
             >
               Workflow Assistant
-              <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 600 8" fill="none">
-                <path d="M0 4 Q150 8 300 4 Q450 0 600 4" stroke="#DC2626" strokeWidth="3" strokeLinecap="round" />
-              </svg>
             </motion.span>
           </h1>
 
@@ -136,14 +130,15 @@ export default function Hero() {
           </motion.div>
 
         </div>
-      </div>
+      </motion.div>
 
       {/* White marquee — sits at the bottom of the hero, same sizing as standalone TrustedBy */}
+      <motion.div style={{ opacity: marqueeOpacity, zIndex: 2 }} className="relative">
       <motion.div
         initial={{ opacity: 0 }}
         animate={started ? { opacity: 1 } : { opacity: 0 }}
         transition={{ delay: 1.1, duration: 0.9 }}
-        className="relative z-10 pb-40 pt-4"
+        className="pb-40 pt-4"
       >
         <p className="text-center text-[11px] font-black text-white uppercase tracking-[0.22em] mb-4">
           Trusted by AI Leaders
@@ -158,15 +153,28 @@ export default function Hero() {
           <MarqueeStrip white />
         </div>
       </motion.div>
+      </motion.div>
 
+      {/* Dark forest green rises from bottom — shade taken from background image greens */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(to top, rgba(26,61,43,0.62) 48%, rgba(26,61,43,0.32) 72%, rgba(26,61,43,0) 100%)",
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
+          scaleY: greenRise,
+          transformOrigin: "bottom",
+          zIndex: 3,
+        }}
+      />
 
-      {/* Bottom mist — blends hero into the greenish first section (#DCFCE7) */}
+      {/* Bottom mist */}
       <div
         className="absolute bottom-0 left-0 right-0 pointer-events-none"
         style={{
-          height: "120px",
+          height: "40px",
           zIndex: 11,
-          background: "linear-gradient(to bottom, transparent 0%, rgba(220,252,231,0.15) 25%, rgba(220,252,231,0.38) 48%, rgba(220,252,231,0.68) 68%, rgba(220,252,231,0.88) 84%, #DCFCE7 100%)",
+          background: "linear-gradient(to bottom, transparent 0%, rgba(220,252,231,0.2) 55%, #DCFCE7 100%)",
         }}
       />
 

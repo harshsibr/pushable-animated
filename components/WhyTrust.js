@@ -31,7 +31,7 @@ export default function WhyTrust() {
             <p className="text-[11px] font-black text-red-600 uppercase tracking-[0.2em] mb-4">Why 500+ Teams Choose Us</p>
             <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-slate-900 leading-tight tracking-tight mb-6">
               Why Businesses<br />Trust<br />
-              <span className="gradient-text">Pushable AI?</span>
+              <span className="text-slate-900">Pushable AI?</span>
             </h2>
             <p className="text-[17px] text-slate-600 leading-relaxed mb-8 max-w-sm">
               We didn&#39;t just build an AI tool. We built an AI workforce that performs,
