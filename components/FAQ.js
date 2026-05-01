@@ -51,7 +51,7 @@ export default function FAQ() {
           <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-slate-900 leading-tight tracking-tight mb-5">
             Got Questions?<br />We Have Answers.
           </h2>
-          <p className="text-[17px] text-slate-600">Everything you need to know about Pushable AI.</p>
+          <p className="text-[17px] text-slate-900">Everything you need to know about Pushable AI.</p>
         </motion.div>
 
         {/* Accordion */}
@@ -94,7 +94,7 @@ export default function FAQ() {
                   >
                     <div className="px-7 pb-6">
                       <div className="h-px bg-slate-200/80 mb-4" />
-                      <p className="text-[14px] text-slate-600 leading-relaxed">{faq.a}</p>
+                      <p className="text-[14px] text-slate-900 leading-relaxed">{faq.a}</p>
                     </div>
                   </motion.div>
                 )}

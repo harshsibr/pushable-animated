@@ -77,7 +77,7 @@ export default function Pricing() {
           <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-slate-900 leading-tight tracking-tight mb-5">
             Flexible Plans for Every<br />Stage of Growth
           </h2>
-          <p className="text-[17px] text-slate-600 mb-8">Start free. Scale as you grow. Cancel anytime.</p>
+          <p className="text-[17px] text-slate-900 mb-8">Start free. Scale as you grow. Cancel anytime.</p>
 
           {/* Toggle */}
           <div className="inline-flex items-center gap-1 glass border border-white/60 rounded-full p-1.5 shadow-sm">
@@ -160,14 +160,14 @@ export default function Pricing() {
                 </div>
 
                 <p className={`text-[13px] font-bold mb-1 ${plan.creditsColor}`}>{plan.credits}</p>
-                <p className="text-[13px] text-slate-500 mb-6 pb-6 border-b border-slate-100">{plan.tagline}</p>
+                <p className="text-[13px] text-slate-900 mb-6 pb-6 border-b border-slate-100">{plan.tagline}</p>
 
                 {/* Features */}
                 <ul className="space-y-3 flex-1 mb-8">
                   {plan.features.map(f => (
                     <li key={f} className="flex items-start gap-2.5">
                       <CheckCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-                      <span className="text-[13px] text-slate-600">{f}</span>
+                      <span className="text-[13px] text-slate-900">{f}</span>
                     </li>
                   ))}
                 </ul>

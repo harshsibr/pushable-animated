@@ -55,7 +55,7 @@ export default function Industries() {
           <h2 style={SERIF} className="text-4xl md:text-[52px] font-black text-slate-900 leading-tight tracking-tight mb-5">
             The Right Push for Every Industry,<br />Built with Pushable
           </h2>
-          <p className="text-[17px] text-slate-600 leading-relaxed">
+          <p className="text-[17px] text-slate-900 leading-relaxed">
             Whatever your business does, Pushable AI finds the routine tasks worth automating and handles them for you.
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ export default function Industries() {
                 <ind.icon className="w-5 h-5 text-red-600" />
               </div>
               <h3 style={SERIF} className="text-xl font-black text-slate-900 mb-3">{ind.label}</h3>
-              <p className="text-[14px] text-slate-600 leading-relaxed mb-4 flex-1">{ind.desc}</p>
+              <p className="text-[14px] text-slate-900 leading-relaxed mb-4 flex-1">{ind.desc}</p>
               {ind.cta ? (
                 <a href="#" className="inline-flex items-center gap-1.5 text-[13px] font-bold text-red-600 hover:text-red-500 transition-colors group/link">
                   Talk to us

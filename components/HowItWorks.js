@@ -511,7 +511,7 @@ export default function HowItWorks() {
               animate={headerInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
               style={SANS}
-              className="text-[17px] text-slate-600 leading-relaxed"
+              className="text-[17px] text-slate-900 leading-relaxed"
             >
               No technical setup needed. If you can send an email, you can run Pushable AI.
             </motion.p>
@@ -616,7 +616,7 @@ export default function HowItWorks() {
                     <h3 style={SANS} className="text-2xl md:text-[28px] font-black text-slate-900 leading-snug">
                       {step.title}
                     </h3>
-                    <p style={SANS} className="text-[15px] text-slate-500 leading-relaxed">
+                    <p style={SANS} className="text-[15px] text-slate-900 leading-relaxed">
                       {step.desc}
                     </p>
 

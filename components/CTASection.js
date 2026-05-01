@@ -23,7 +23,7 @@ export default function CTASection() {
             <span className="text-slate-900">Business Forward?</span>
           </h2>
 
-          <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl text-slate-900 leading-relaxed max-w-2xl mx-auto">
             Join 500+ businesses that have handed their repetitive work to AI — and are
             growing faster, spending less, and stressing none.
           </p>

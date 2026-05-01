@@ -41,9 +41,9 @@ const slides = [
 /* activepieces-style stacking — each depth level shifts right, up, and rotates slightly */
 const STACK = [
   { x: 0,   y: 0,    rotate: 0,   scale: 1,     opacity: 1,    z: 40 },
-  { x: 8,  y: -44,  rotate: 1.2, scale: 0.984, opacity: 0.80, z: 30 },
-  { x: 16,  y: -88,  rotate: 2.4, scale: 0.968, opacity: 0.58, z: 20 },
-  { x: 32,  y: -132, rotate: 3.6, scale: 0.952, opacity: 0.38, z: 10 },
+  { x: 8,  y: -44,  rotate: 1.2, scale: 0.984, opacity: 0.95, z: 30 },
+  { x: 16,  y: -88,  rotate: 2.4, scale: 0.968, opacity: 0.85, z: 20 },
+  { x: 32,  y: -132, rotate: 3.6, scale: 0.952, opacity: 0.72, z: 10 },
 ];
 
 export default function ShowcaseCards() {
@@ -95,7 +95,7 @@ export default function ShowcaseCards() {
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-[17px] text-slate-500 max-w-xl mx-auto"
+            className="text-[17px] text-slate-900 max-w-xl mx-auto"
           >
             Deploy AI agents built for your exact business function — each one pre-trained and ready in minutes.
           </motion.p>
@@ -123,7 +123,7 @@ export default function ShowcaseCards() {
                 {current.title}
               </h3>
 
-              <p className="text-[16px] text-slate-500 leading-relaxed">
+              <p className="text-[16px] text-slate-900 leading-relaxed">
                 {current.desc}
               </p>
 
@@ -138,10 +138,10 @@ export default function ShowcaseCards() {
                       className={`flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-200 ${
                         i === active
                           ? "bg-black text-white shadow-lg shadow-black/10"
-                          : "text-slate-500 hover:text-slate-800 hover:bg-black/5"
+                          : "text-slate-900 hover:text-black hover:bg-black/5"
                       }`}
                     >
-                      <Icon className={`w-4 h-4 shrink-0 ${i === active ? "text-red-400" : "text-slate-400"}`} />
+                      <Icon className={`w-4 h-4 shrink-0 ${i === active ? "text-red-400" : "text-slate-700"}`} />
                       <span className="text-[13px] font-semibold flex-1">{s.label}</span>
                       {i === active && (
                         <motion.span
@@ -179,27 +179,33 @@ export default function ShowcaseCards() {
                       zIndex: cfg.z,
                     }}
                     transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                    className={`absolute inset-0 bg-white rounded-2xl overflow-hidden shadow-2xl shadow-slate-300/60 ${
-                      !isActive ? "cursor-pointer" : ""
+                    className={`absolute inset-0 rounded-2xl overflow-hidden shadow-xl ${
+                      isActive
+                        ? "bg-white shadow-slate-300/60"
+                        : "shadow-black/20 cursor-pointer"
                     }`}
+                    style={!isActive
+                      ? { transformOrigin: "bottom left", background: "rgba(210,210,210,0.25)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", border: "2px solid rgba(255,255,255,1)", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }
+                      : { transformOrigin: "bottom left" }}
                     onClick={() => !isActive && goTo(slideIdx)}
-                    style={{ transformOrigin: "bottom left" }}
                   >
                     {/* Label bar */}
-                    <div className="flex items-center gap-2.5 px-5 py-3 border-b border-slate-100 shrink-0 bg-white">
+                    <div className={`flex items-center gap-2.5 px-5 py-3 border-b shrink-0 ${isActive ? "border-slate-100 bg-white" : "border-white/20 bg-white/10"}`}>
                       <div className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
-                      <span className="text-[12px] font-semibold text-slate-500 truncate">{slide.label}</span>
+                      <span className={`text-[12px] font-semibold truncate ${isActive ? "text-slate-500" : "text-slate-800"}`}>{slide.label}</span>
                     </div>
-                    {/* Full screenshot — no cropping */}
-                    <Image
-                      src={slide.image}
-                      alt={slide.label}
-                      width={1440}
-                      height={900}
-                      style={{ width: "100%", height: "auto", display: "block" }}
-                      priority={isActive}
-                      unoptimized
-                    />
+                    {/* Screenshot — only rendered on the front card */}
+                    {isActive && (
+                      <Image
+                        src={slide.image}
+                        alt={slide.label}
+                        width={1440}
+                        height={900}
+                        style={{ width: "100%", height: "auto", display: "block" }}
+                        priority
+                        unoptimized
+                      />
+                    )}
                   </motion.div>
                 );
               })}

@@ -33,7 +33,7 @@ export default function WhyTrust() {
               Why Businesses<br />Trust<br />
               <span className="text-slate-900">Pushable AI?</span>
             </h2>
-            <p className="text-[17px] text-slate-600 leading-relaxed mb-8 max-w-sm">
+            <p className="text-[17px] text-slate-900 leading-relaxed mb-8 max-w-sm">
               We didn&#39;t just build an AI tool. We built an AI workforce that performs,
               scales, and gets smarter — day after day.
             </p>
@@ -64,7 +64,7 @@ export default function WhyTrust() {
                   <r.icon className="w-5 h-5 text-red-600" />
                 </div>
                 <h3 className="text-[15px] font-black text-slate-900 mb-2">{r.title}</h3>
-                <p className="text-[13px] text-slate-500 leading-relaxed">{r.desc}</p>
+                <p className="text-[13px] text-slate-900 leading-relaxed">{r.desc}</p>
               </motion.div>
             ))}
           </div>
