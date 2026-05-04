@@ -5,7 +5,9 @@
       "Bash(npm install *)",
       "Bash(npm run *)",
       "Bash(curl -s http://localhost:3000)",
-      "Bash(curl -s \"https://www.activepieces.com/\")"
+      "Bash(curl -s \"https://www.activepieces.com/\")",
+      "Bash(Get-ChildItem -Path \"c:\\\\animated-pushable-new\" -Directory)",
+      "Bash(Select-Object FullName)"
     ]
   }
 }

@@ -15,19 +15,19 @@ export default function Home() {
       <Navbar />
       <Hero />
       <div className="relative z-10">
-        <div style={{ background: "#DCFCE7" }}><ShowcaseCards /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#DCFCE7,#F5F4F1)" }} />
+        <div style={{ background: "#FEF2F2" }}><ShowcaseCards /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#FEF2F2,#F5F4F1)" }} />
         <div style={{ background: "#F5F4F1" }}><HowItWorks /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#F5F4F1,#DCFCE7)" }} />
-        <div style={{ background: "#DCFCE7" }}><Industries /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#DCFCE7,#EFF6FF)" }} />
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#F5F4F1,#FEF2F2)" }} />
+        <div style={{ background: "#FEF2F2" }}><Industries /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#FEF2F2,#EFF6FF)" }} />
         <div style={{ background: "#EFF6FF" }}><Pricing /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#EFF6FF,#DCFCE7)" }} />
-        <div style={{ background: "#DCFCE7" }}><WhyTrust /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#DCFCE7,#FFF7ED)" }} />
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#EFF6FF,#FEF2F2)" }} />
+        <div style={{ background: "#FEF2F2" }}><WhyTrust /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#FEF2F2,#FFF7ED)" }} />
         <div style={{ background: "#FFF7ED" }}><FAQ /></div>
-        <div style={{ height: 80, background: "linear-gradient(to bottom,#FFF7ED,#DCFCE7)" }} />
-        <div style={{ background: "#DCFCE7" }}><CTASection /></div>
+        <div style={{ height: 80, background: "linear-gradient(to bottom,#FFF7ED,#FEF2F2)" }} />
+        <div style={{ background: "#FEF2F2" }}><CTASection /></div>
         <Footer />
       </div>
     </main>

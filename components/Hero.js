@@ -174,7 +174,7 @@ export default function Hero() {
         style={{
           height: "40px",
           zIndex: 11,
-          background: "linear-gradient(to bottom, transparent 0%, rgba(220,252,231,0.2) 55%, #DCFCE7 100%)",
+          background: "linear-gradient(to bottom, transparent 0%, rgba(254,242,242,0.2) 55%, #FEF2F2 100%)",
         }}
       />
 

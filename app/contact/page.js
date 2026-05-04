@@ -66,7 +66,7 @@ export default function ContactPage() {
             className="text-5xl sm:text-[58px] font-black text-slate-900 leading-tight tracking-tight mb-4"
           >
             Got a question?{" "}
-            <span className="text-red-600 italic">Let&apos;s talk.</span>
+            <span className="text-slate-900 italic">Let&apos;s talk.</span>
           </motion.h1>
 
           <motion.p
